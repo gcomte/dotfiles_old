@@ -177,3 +177,19 @@ mode "$mode_system" {
 }
 bindsym $mod+Pause mode "$mode_system"
 bindsym $mod+p mode "$mode_system"
+
+##### Disable the numlock button
+# In fact what we're doing is mapping all the non-numlock keys to the numlock keys,
+# so we're just getting the numbers no matter whether numlock is on or off
+exec --no-startup-id xmodmap -e "keysym KP_Insert = KP_0"
+exec --no-startup-id xmodmap -e "keysym KP_End = KP_1"
+exec --no-startup-id xmodmap -e "keysym KP_Down = KP_2"
+exec --no-startup-id xmodmap -e "keysym KP_Next = KP_3"
+exec --no-startup-id xmodmap -e "keysym KP_Left = KP_4"
+exec --no-startup-id xmodmap -e "keysym KP_Begin = KP_5"
+exec --no-startup-id xmodmap -e "keysym KP_Right = KP_6"
+exec --no-startup-id xmodmap -e "keysym KP_Home = KP_7"
+exec --no-startup-id xmodmap -e "keysym KP_Up = KP_8"
+exec --no-startup-id xmodmap -e "keysym KP_Prior = KP_9"
+exec --no-startup-id xmodmap -e "keysym KP_Delete = KP_Decimal"
+
