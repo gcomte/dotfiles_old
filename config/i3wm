@@ -158,7 +158,11 @@ bar {
 ###################
 # ADDED BY GCOMTE #
 ###################
-bindsym $mod+b exec i3lock -t -i /home/gcomte/Pictures/lightning-wallpaper.png
+
+# Lock the screen.
+# before locking it change the screen layout to noConfig, and afterwards back to puzzleWorkplace
+# The only reason for this is having a better lock screen image placement :-)
+bindsym $mod+b exec ~/.screenlayout/noConfig.sh && i3lock -t -i /home/gcomte/Pictures/lightning-wallpaper.png -n && ~/.screenlayout/puzzleWorkplace.sh
 
  # LockScreen, copied from https://wiki.archlinux.org/index.php/i3#Shutdown.2C_reboot.2C_lock_screen
 set $Locker i3lock && sleep 1
@@ -193,5 +197,10 @@ exec --no-startup-id xmodmap -e "keysym KP_Up = KP_8"
 exec --no-startup-id xmodmap -e "keysym KP_Prior = KP_9"
 exec --no-startup-id xmodmap -e "keysym KP_Delete = KP_Decimal"
 
+
 # set desktop background
 exec_always feh --bg-scale ~/Pictures/wallpaper.png
+
+# set correct screen layout on startup
+exec --no-startup-id ~/.screenlayout/puzzleWorkplace.sh
+
